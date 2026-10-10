@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 
@@ -583,4 +584,591 @@
 
 </body>
 
+=======
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SPARK HUB.Ai</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+
+    <style>
+        /* reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', Arial, sans-serif;
+            background: #0a0e1a;
+            color: #e0e6f0;
+            min-height: 100vh;
+        }
+
+        /* ---- navbar ---- */
+        nav {
+            display: flex;
+            align-items: center;
+            padding: 14px 32px;
+            gap: 28px;
+            background: rgba(12, 16, 30, 0.85);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+            border-bottom: 2px solid rgba(58, 171, 184, 0.3);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-logo-block {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            flex-shrink: 0;
+        }
+
+        .nav-logo-circle {
+            width: 58px;
+            height: 58px;
+            border-radius: 50%;
+            border: 3px solid #3aabb8;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+            box-shadow: 0 0 18px rgba(58, 171, 184, 0.35);
+            transition: box-shadow 0.3s ease;
+        }
+
+        .nav-logo-circle:hover {
+            box-shadow: 0 0 28px rgba(58, 171, 184, 0.6);
+        }
+
+        .logo-emoji {
+            font-size: 30px;
+        }
+
+        .nav-brand-text {
+            font-size: 17px;
+            font-weight: 700;
+            background: linear-gradient(135deg, #3aabb8, #7c5bf5);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1.3;
+        }
+
+        /* nav links */
+        .nav-links {
+            list-style: none;
+            display: flex;
+            align-items: flex-start;
+            gap: 24px;
+            flex: 1;
+        }
+
+        .nav-links li {
+            text-align: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #99b0bc;
+            font-size: 14px;
+            font-weight: 500;
+            transition: color 0.3s ease, text-shadow 0.3s ease;
+            position: relative;
+        }
+
+        /* underline animation on hover */
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #3aabb8, #7c5bf5);
+            transition: width 0.3s ease;
+            border-radius: 2px;
+        }
+
+        .nav-links a:hover {
+            color: #3aabb8;
+            text-shadow: 0 0 12px rgba(58, 171, 184, 0.4);
+            text-decoration: none;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-welcome {
+            font-size: 15px;
+            font-weight: 500;
+            color: #7c5bf5;
+            white-space: nowrap;
+            flex-shrink: 0;
+            text-shadow: 0 0 12px rgba(124, 91, 245, 0.3);
+        }
+
+        /* ---- hero section ---- */
+        .hero {
+            text-align: center;
+            padding: 100px 40px 60px;
+            background: radial-gradient(ellipse at top center, #111b2e 0%, #0a0e1a 70%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* subtle glow behind hero */
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(58, 171, 184, 0.08) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .hero h1 {
+            font-size: 62px;
+            font-weight: 900;
+            line-height: 1.15;
+            margin-bottom: 24px;
+            background: linear-gradient(135deg, #3aabb8 0%, #61dafb 30%, #7c5bf5 60%, #c77dff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            background-size: 200% 200%;
+            animation: shimmer 4s ease-in-out infinite alternate;
+        }
+
+        @keyframes shimmer {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            100% {
+                background-position: 100% 50%;
+            }
+        }
+
+        .hero p {
+            font-size: 19px;
+            color: #8a9bb5;
+            line-height: 1.7;
+            max-width: 660px;
+            margin: 0 auto;
+        }
+
+        /* ---- gallery / tools grid ---- */
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 28px;
+            padding: 20px 40px 70px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .gallery a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 200px;
+            height: 200px;
+            border-radius: 22px;
+            overflow: hidden;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(58, 171, 184, 0.15);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            background: linear-gradient(145deg, #111b2e, #0d1424);
+            border: 2px solid rgba(58, 171, 184, 0.15);
+            position: relative;
+        }
+
+        /* hover overlay */
+        .gallery a::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(124, 91, 245, 0.2) 0%, rgba(58, 171, 184, 0.15) 50%, transparent 100%);
+            z-index: 1;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .gallery a:hover {
+            transform: translateY(-14px) scale(1.04);
+            box-shadow: 0 20px 50px rgba(58, 171, 184, 0.2),
+                0 0 30px rgba(124, 91, 245, 0.15),
+                0 0 0 2px rgba(58, 171, 184, 0.5);
+            border-color: #3aabb8;
+        }
+
+        .gallery a:hover::before {
+            opacity: 1;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        .gallery a:hover img {
+            transform: scale(1.18);
+        }
+
+        /* tool cards inside gallery */
+        .tool-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+            padding: 18px;
+            text-align: center;
+            gap: 10px;
+        }
+
+        .tool-icon {
+            font-size: 52px;
+            line-height: 1;
+            filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.3));
+        }
+
+        .tool-name {
+            font-size: 14px;
+            font-weight: 700;
+            color: #fff;
+            letter-spacing: 0.5px;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+        }
+
+        .tool-tag {
+            font-size: 10px;
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.7);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        /* each tool gets its own color */
+        .tool-chatgpt {
+            background: linear-gradient(135deg, #10a37f, #1a7f64) !important;
+        }
+
+        .tool-gemini {
+            background: linear-gradient(135deg, #4285f4, #8b5cf6, #ea4335) !important;
+        }
+
+        .tool-claude {
+            background: linear-gradient(135deg, #d4a574, #c8956c) !important;
+        }
+
+        .tool-midjourney {
+            background: linear-gradient(135deg, #0d1117, #1a1f2e, #2d1b69) !important;
+        }
+
+        .tool-dalle {
+            background: linear-gradient(135deg, #a259ff, #6c3ce0) !important;
+        }
+
+        .tool-copilot {
+            background: linear-gradient(135deg, #2b88d8, #0078d4) !important;
+        }
+
+        .tool-perplexity {
+            background: linear-gradient(135deg, #20b2aa, #1a8a82) !important;
+        }
+
+        .tool-runway {
+            background: linear-gradient(135deg, #ff6b6b, #ee5a24) !important;
+        }
+
+        /* section titles */
+        .section-heading {
+            text-align: center;
+            padding: 50px 40px 10px;
+        }
+
+        .section-heading h2 {
+            font-size: 28px;
+            font-weight: 700;
+            background: linear-gradient(135deg, #3aabb8, #7c5bf5);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 8px;
+        }
+
+        .section-heading p {
+            font-size: 15px;
+            color: #5a6a80;
+        }
+
+        /* ---- footer ---- */
+        footer {
+            background: linear-gradient(180deg, #0a0e1a, #060912);
+            border-top: 1px solid rgba(58, 171, 184, 0.15);
+            padding: 50px 40px 24px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 60px;
+            max-width: 860px;
+            margin: 0 auto 30px;
+        }
+
+        .footer-brand-name {
+            font-size: 17px;
+            font-weight: 700;
+            background: linear-gradient(135deg, #3aabb8, #7c5bf5);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 10px;
+        }
+
+        .footer-desc {
+            font-size: 14px;
+            color: #5a6a80;
+            line-height: 1.7;
+        }
+
+        .footer-col h4 {
+            font-size: 12px;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            color: #3aabb8;
+            margin-bottom: 16px;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 12px;
+        }
+
+        .footer-col ul li a {
+            text-decoration: none;
+            color: #5a6a80;
+            font-size: 14px;
+            transition: color 0.3s ease, padding-left 0.3s ease;
+        }
+
+        .footer-col ul li a:hover {
+            color: #7c5bf5;
+            padding-left: 6px;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            font-size: 13px;
+            color: #3a4560;
+            border-top: 1px solid rgba(58, 171, 184, 0.1);
+            padding-top: 18px;
+            max-width: 860px;
+            margin: 0 auto;
+        }
+
+        /* ---- mobile ---- */
+        @media (max-width: 768px) {
+            nav {
+                flex-wrap: wrap;
+                gap: 12px;
+                padding: 12px 16px;
+            }
+
+            .nav-links {
+                flex-wrap: wrap;
+                gap: 14px;
+            }
+
+            .hero {
+                padding: 60px 20px 40px;
+            }
+
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .gallery {
+                padding: 10px 16px 50px;
+                gap: 16px;
+            }
+
+            .gallery a {
+                width: 150px;
+                height: 150px;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 28px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <!-- logo -->
+        <a class="nav-logo-block" href="#">
+            <div class="nav-logo-circle">
+                <span class="logo-emoji">🌐</span>
+            </div>
+            <div class="nav-brand-text">SPARK<br>HUB.Ai</div>
+        </a>
+
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#ai-tools">All<br>Tools</a></li>
+            <li><a href="https://vercel.com/" target="_blank">Web<br>Developments</a></li>
+            <li><a href="https://www.kaggle.com/" target="_blank">Data<br>Tools</a></li>
+            <li><a href="https://www.midjourney.com/" target="_blank">Image<br>Tools</a></li>
+            <li><a href="https://elevenlabs.io/" target="_blank">Audio<br>Tools</a></li>
+        </ul>
+
+        <div class="nav-welcome">Hey Welcome Buddy 😊</div>
+    </nav>
+
+    <!-- hero -->
+    <section class="hero" id="home">
+        <h1>Ignite Your Ai Tools with<br>SPARK HUB.Ai</h1>
+        <p>Your intelligent hub for AI-powered tools, insights, and solutions. Supercharge your creativity and
+            productivity.</p>
+    </section>
+
+    <!-- tools gallery -->
+    <div class="section-heading" id="ai-tools">
+        <h2>🔥 Popular AI Tools</h2>
+        <p>Click any tool to start using it instantly</p>
+    </div>
+
+    <section>
+        <div class="gallery">
+
+            <a href="https://chat.openai.com/" target="_blank" class="tool-chatgpt" title="Open ChatGPT">
+                <div class="tool-card">
+                    <span class="tool-icon">🤖</span>
+                    <span class="tool-name">ChatGPT</span>
+                    <span class="tool-tag">Chat AI</span>
+                </div>
+            </a>
+
+            <a href="https://gemini.google.com/" target="_blank" class="tool-gemini" title="Open Google Gemini">
+                <div class="tool-card">
+                    <span class="tool-icon">✨</span>
+                    <span class="tool-name">Gemini</span>
+                    <span class="tool-tag">Google AI</span>
+                </div>
+            </a>
+
+            <a href="https://claude.ai/" target="_blank" class="tool-claude" title="Open Claude AI">
+                <div class="tool-card">
+                    <span class="tool-icon">🧠</span>
+                    <span class="tool-name">Claude</span>
+                    <span class="tool-tag">Anthropic</span>
+                </div>
+            </a>
+
+            <a href="https://www.midjourney.com/" target="_blank" class="tool-midjourney" title="Open Midjourney">
+                <div class="tool-card">
+                    <span class="tool-icon">🎨</span>
+                    <span class="tool-name">Midjourney</span>
+                    <span class="tool-tag">Image Gen</span>
+                </div>
+            </a>
+
+            <a href="https://labs.openai.com/" target="_blank" class="tool-dalle" title="Open DALL·E">
+                <div class="tool-card">
+                    <span class="tool-icon">🖼️</span>
+                    <span class="tool-name">DALL·E</span>
+                    <span class="tool-tag">Image Gen</span>
+                </div>
+            </a>
+
+            <a href="https://copilot.microsoft.com/" target="_blank" class="tool-copilot"
+                title="Open Microsoft Copilot">
+                <div class="tool-card">
+                    <span class="tool-icon">💻</span>
+                    <span class="tool-name">Copilot</span>
+                    <span class="tool-tag">Microsoft</span>
+                </div>
+            </a>
+
+            <a href="https://www.perplexity.ai/" target="_blank" class="tool-perplexity" title="Open Perplexity">
+                <div class="tool-card">
+                    <span class="tool-icon">🔍</span>
+                    <span class="tool-name">Perplexity</span>
+                    <span class="tool-tag">AI Search</span>
+                </div>
+            </a>
+
+            <a href="https://runwayml.com/" target="_blank" class="tool-runway" title="Open Runway">
+                <div class="tool-card">
+                    <span class="tool-icon">🎬</span>
+                    <span class="tool-name">Runway</span>
+                    <span class="tool-tag">Video AI</span>
+                </div>
+            </a>
+
+        </div>
+    </section>
+
+    <!-- footer -->
+    <footer>
+        <div class="footer-grid">
+            <div>
+                <div class="footer-brand-name">SPARK HUB.Ai</div>
+                <p class="footer-desc">Empowering creators and innovators through intelligent AI solutions.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            ©️ 2026 SPARK HUB.Ai — All rights reserved.
+        </div>
+    </footer>
+
+</body>
+
+>>>>>>> 355ce5ef2fd1585178d3f7fda767aa186a3a93ff
 </html>
